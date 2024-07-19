@@ -1,0 +1,491 @@
+{
+	"info": {
+		"_postman_id": "14038463-4850-4349-a22d-2d9fc0a2a727",
+		"name": "File Sharing API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19471246"
+	},
+	"item": [
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "Upload files",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files[]",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "directory",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/files",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rename file",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "namw",
+									"value": "file",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/files/1/rename",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"files",
+								"1",
+								"rename"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle public file",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "namw",
+									"value": "file",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/files/1/toggle-public",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"files",
+								"1",
+								"toggle-public"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete file",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/files/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"files",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get file",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/files/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"files",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get space",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/files/user/current-space",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"files",
+								"user",
+								"current-space"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download file",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/files/download/fdsgrer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"files",
+								"download",
+								"fdsgrer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Registrate user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Shami",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "Shami@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "Shami@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Directories",
+			"item": [
+				{
+					"name": "Create directories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "folder",
+									"type": "text"
+								},
+								{
+									"key": "parent_id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/directories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"directories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete directories",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/directories/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"directories",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rename directories",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "folder",
+									"type": "text"
+								},
+								{
+									"key": "parent_id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/directories/2/rename",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"directories",
+								"2",
+								"rename"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "1|j6ze24Rt6rvoR16dDytQBwUtAUOQXWpriAjMDsZIc82762df",
+			"type": "string"
+		}
+	]
+}
